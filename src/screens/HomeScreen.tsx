@@ -1,5 +1,5 @@
 
-import { JSXElementConstructor, ReactElement, useContext } from 'react';
+import {  useContext } from 'react';
 import {
   StyleSheet,
   Text,

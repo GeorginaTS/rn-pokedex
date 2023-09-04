@@ -82,8 +82,7 @@ const PokemonDetailScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    margin: 25,
+  topView: {
     marginTop: 60,
     flex: 1,
     padding: 16,
@@ -92,89 +91,121 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: "center",
   },
-  name: {
-    fontSize: 30,
-    fontWeight: "bold",
-    marginBottom: 8,
-    textAlign: "left",
-  },
-  id: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: 16,
-    textAlign: "left",
-  },
   imageContainer: {
-    alignItems: "center",
     marginBottom: 16,
-    shadowColor: "black",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    borderRadius: 150, // Hace que el contenedor sea circular
-    overflow: "hidden", // Recorta la imagen a la forma del contenedor circular
+    position: "relative", // Añade posición relativa al contenedor
+    alignItems: "center",
   },
   image: {
-    width: 270,
-    height: 270,
+    width: 200,
+    height: 200,
     resizeMode: "cover",
+    zIndex: 1000,
   },
-  type: {
-    fontSize: 18,
+  pokeBall: {
+    position: "absolute",
+    opacity: 0.1,
+    width: 200,
+    height: 200,
+    transform: [{ rotate: "-20deg" }],
+  },
+  nameId: {
+    alignItems: "center",
+  },
+  name: {
+    fontSize: 55,
     fontWeight: "bold",
-    textAlign: "center",
+    marginBottom: 18,
+    textAlign: "left",
+    color: "grey",
+    textShadowColor: "rgba(0, 0, 0, 0.4)", // Color de la sombra
+    textShadowOffset: { width: 1, height: 1 }, // Desplazamiento de la sombra
+    textShadowRadius: 7, // Radio de la sombra
+  },
+  id: {
+    fontSize: 25,
+    fontWeight: "bold",
+    textAlign: "left",
+    color: "grey",
   },
   typeContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 16,
+    marginBottom: 6,
   },
   typeText: {
-    fontSize: 16,
-    marginRight: 8,
+    fontSize: 18,
     backgroundColor: "#48F10E",
     color: "white",
-    paddingVertical: 4,
-    paddingHorizontal: 8,
+    padding: 10,
+    paddingHorizontal: 20,
     borderRadius: 20,
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    marginRight: 10,
+  },
+  bottomView: {
+    backgroundColor: "white",
+    padding: 26,
+    paddingHorizontal: 40,
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+  },
+  info: {
+    fontSize: 25,
+    fontWeight: "bold",
+    textDecorationLine: "underline",
+    marginBottom: 15,
   },
   weight: {
     fontSize: 18,
     fontWeight: "bold",
-    textAlign: "center",
     marginBottom: 16,
+    color: "grey"
   },
   sprites: {
     fontSize: 18,
     fontWeight: "bold",
-    textAlign: "center",
+    color: "grey"
   },
   spritesContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
-    marginBottom: 16,
+    justifyContent: "space-evenly",
+    marginBottom: 10,
   },
   spriteImage: {
-    width: 150,
-    height: 150,
+    width: 70,
+    height: 70,
+  },
+abilitiesContainer: {
+    marginBottom: 16,
+    flexDirection: "row", 
+    flexWrap: "wrap", 
+    alignItems: "center", 
   },
   abilities: {
     fontSize: 18,
     fontWeight: "bold",
-    textAlign: "center",
-  },
-  abilitiesContainer: {
-    marginBottom: 16,
+    color: "grey"
   },
   abilityText: {
-    fontSize: 16,
-    marginBottom: 4,
+    fontSize: 18,
+    marginBottom: 10,
     backgroundColor: "#078716",
     color: "white",
-    paddingVertical: 4,
-    paddingHorizontal: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
     borderRadius: 20,
+    textAlign: "center",
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    marginRight: 10, 
+    marginTop: 10, 
   },
 });
 
