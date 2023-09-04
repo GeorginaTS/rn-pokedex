@@ -2,13 +2,13 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../src/screens/HomeScreen";
-import SearchScreen from "../src/screens/HomeScreen"; 
+import SearchScreen from "../src/screens/SearchPokemonScreen";
 import AddNewScreen from "../src/screens/AddPokemonScreen";
-import PokemonDetailScreen from "../src/screens/PokemonDetailScreen"; // Importa PokemonDetailScreen
+import PokemonDetailScreen from "../src/screens/PokemonDetailScreen";
 import { Ionicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator(); // Crea una pila de navegación
+const Stack = createStackNavigator();
 
 // Define la pila de navegación para la pantalla HomeScreen
 const HomeStack = () => {
@@ -25,7 +25,7 @@ const HomeStack = () => {
         name="PokemonDetail"
         component={PokemonDetailScreen}
         options={{
-          headerTitle: '',
+          headerTitle: "",
           headerTransparent: true,
         }}
       />
@@ -77,4 +77,5 @@ const BottomTabNavigator = () => {
     </Tab.Navigator>
   );
 };
+
 export default BottomTabNavigator;

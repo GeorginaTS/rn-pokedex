@@ -31,49 +31,65 @@ const PokemonDetailScreen = () => {
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.id}>#{id}</Text>
-          <View style={styles.imageContainer}>
-            <Image
-              source={{ uri: sprites.other["official-artwork"].front_default }}
-              style={styles.image}
-            />
+          {/*INFO ON THE TOP */}
+          <View style={styles.topView}>
+            <View style={styles.imageContainer}>
+              <Image
+                source={{
+                  uri: sprites.other["official-artwork"].front_default,
+                }}
+                style={styles.image}
+              />
+              <Image
+                source={require("../../assets/pokemonBall.png")}
+                style={styles.pokeBall}
+              />
+            </View>
+
+            <View style={styles.nameId}>
+              <Text style={styles.id}>#{id}</Text>
+              <Text style={styles.name}>{name}</Text>
+            </View>
+            <View style={styles.typeContainer}>
+              {types.map((type: { type: { name: string } }, index: number) => (
+                <Text key={index} style={styles.typeText}>
+                  {type.type.name.toUpperCase()}
+                </Text>
+              ))}
+            </View>
           </View>
-          <Text style={styles.type}>Type: {data.type}</Text>
-          <View style={styles.typeContainer}>
-            {types.map((type, index) => (
-              <Text key={index} style={styles.typeText}>
-                {type.type.name}
-              </Text>
-            ))}
-          </View>
-          <Text style={styles.weight}>Weight: {weight} kg</Text>
-          <Text style={styles.sprites}>Sprites:</Text>
-          <View style={styles.spritesContainer}>
-            <Image
-              source={{ uri: sprites.back_default }}
-              style={styles.spriteImage}
-            />
-            <Image
-              source={{ uri: sprites.back_shiny }}
-              style={styles.spriteImage}
-            />
-            <Image
-              source={{ uri: sprites.front_default }}
-              style={styles.spriteImage}
-            />
-            <Image
-              source={{ uri: sprites.front_shiny }}
-              style={styles.spriteImage}
-            />
-          </View>
-          <Text style={styles.abilities}>Abilities:</Text>
-          <View style={styles.abilitiesContainer}>
-            {abilities.map((ability, index) => (
-              <Text key={index} style={styles.abilityText}>
-                {ability.ability.name}
-              </Text>
-            ))}
+
+          {/*INFO ON THE BOTTOM */}
+          <View style={styles.bottomView}>
+            <Text style={styles.info}>Info</Text>
+            <Text style={styles.weight}>Weight: {weight} kg</Text>
+            <Text style={styles.sprites}>Sprites:</Text>
+            <View style={styles.spritesContainer}>
+              <Image
+                source={{ uri: sprites.back_default }}
+                style={styles.spriteImage}
+              />
+              <Image
+                source={{ uri: sprites.back_shiny }}
+                style={styles.spriteImage}
+              />
+              <Image
+                source={{ uri: sprites.front_default }}
+                style={styles.spriteImage}
+              />
+              <Image
+                source={{ uri: sprites.front_shiny }}
+                style={styles.spriteImage}
+              />
+            </View>
+            <Text style={styles.abilities}>Abilities:</Text>
+            <View style={styles.abilitiesContainer}>
+              {abilities.map((ability, index) => (
+                <Text key={index} style={styles.abilityText}>
+                  {ability.ability.name}
+                </Text>
+              ))}
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
