@@ -6,7 +6,7 @@ test('component SafeAreaView mounts properly', () => {
     const wrapper = render(<SafeAreaView />)
     expect(wrapper).toBeTruthy()
 })
-test('component FlatList  mounts properly', () => {
+test('component PokemonCard 132 mounts properly', () => {
     const wrapper = render(<PokemonCard url='https://pokeapi.co/api/v2/pokemon-species/132/' />)
     expect(wrapper).toBeTruthy()
 })
